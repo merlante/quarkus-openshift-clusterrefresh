@@ -1,4 +1,4 @@
-# api-hitter project
+# quarkus-openshift-clusterrefresh project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
