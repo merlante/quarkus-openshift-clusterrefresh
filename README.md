@@ -1,6 +1,6 @@
 # quarkus-openshift-clusterrefresh project
 
-This is a simple quarkus-based cli app for extending the expiry date of an OSD cluster by 7 days. You need to specify the cluster id and either an OCM access token or a refresh token for auth. The easiest way to use the tool is to be logged in to OCM, indicating that you have a valid refresh token, and to identify the correct cluster id. To quickly get your cluster ids:
+This is a simple quarkus-based cli app for extending the expiry date of an OSD cluster by 7 days. You need to specify the cluster id and either an OCM access token or a refresh token for auth. The easiest way to use the tool is to be logged in to OCM and use the one-liner, below. You also need to identify your cluster id. To quickly get your cluster ids:
 ```
 ocm get clusters | jq '.items[] | .id'
 ```
