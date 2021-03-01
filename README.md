@@ -6,7 +6,9 @@ ocm get clusters | jq '.items[] | .id'
 ```
 The OCM API baseUrl https://api.stage.openshift.com is assumed in the one-liner, below, but change as required. When you have the cluster id, run:
 ```
-docker run -i --rm quay.io/mmclaugh/osd-cluster-extender extend -u https://api.stage.openshift.com -c <cluster_id> -r `jq -r < ~/.ocm.json '.refresh_token'`
+CLUSTER_NAME=your-cluster-name
+CLUSTER=`ocm list clusters | grep ${CLUSTER_NAME} | awk '{ print $1}'`
+docker run -i --rm quay.io/mmclaugh/osd-cluster-extender extend -u https://api.stage.openshift.com -c ${CLUSTER} -r `jq -r < ~/.ocm.json '.refresh_token'`
 ```
 Requirements for the above:
 - ocm: https://github.com/openshift-online/ocm-cli/releases
